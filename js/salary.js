@@ -1,9 +1,3 @@
-function formatCurrency(value) {
-    return value.toLocaleString("en-IN", {
-        minimumFractionDigits: 2,
-        maximumFractionDigits: 2
-    });
-}
 
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -112,15 +106,6 @@ function calculateSalary() {
         </table>
     `;
 }
-document.addEventListener("DOMContentLoaded", function () {
-
-    const pdfBtn = document.getElementById("downloadPdf");
-
-    if (pdfBtn) {
-        pdfBtn.addEventListener("click", downloadPDF);
-    }
-
-});
 
 function downloadPDF() {
 
