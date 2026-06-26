@@ -27,7 +27,7 @@ function calculateSalary() {
 
     // Validation
     if (gross <= 0) {
-        alert("Please enter a valid Gross Salary.");
+        showToast("Please Enter Gross Salary");
         return;
     }
 
@@ -38,7 +38,7 @@ function calculateSalary() {
 
     // Validation
     if (basic > gross) {
-        alert("Basic Salary cannot be greater than Gross Salary.");
+        showToast("Basic Salary cannot be greater than Gross Salary.");
         return;
     }
 
@@ -105,6 +105,7 @@ function calculateSalary() {
 
         </table>
     `;
+    showToast("Salary Calculated Successfully");
 }
 
 function downloadPDF() {

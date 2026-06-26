@@ -1,0 +1,5 @@
+User-agent: *
+
+Allow: /
+
+Sitemap: https://kumarpalla.github.io/workmate-india/sitemap.xml

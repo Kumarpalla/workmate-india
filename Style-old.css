@@ -1,0 +1,506 @@
+/* ===========================
+   Global Styles
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background: #f5f5f5;
+    color: #333;
+}
+
+/* ===========================
+   Header
+=========================== */
+
+header {
+    background: #0077ff;
+    color: white;
+    padding: 30px;
+    text-align: center;
+}
+
+/* ===========================
+   Navigation
+=========================== */
+
+nav {
+    margin-top: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+/* ===========================
+   Cards Layout
+=========================== */
+
+.tools {
+    width: 90%;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #0077ff;
+}
+
+.card p {
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   Inputs
+=========================== */
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* ===========================
+   Checkboxes
+=========================== */
+
+.checkbox {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.checkbox label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.checkbox input {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+button {
+    background: #0077ff;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+button:hover {
+    background: #005fd1;
+}
+
+/* ===========================
+   Result
+=========================== */
+
+#result {
+    margin-top: 15px;
+}
+
+/* ===========================
+   Result Table
+=========================== */
+
+.result-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.result-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+.result-table td:first-child {
+    text-align: left;
+}
+
+.result-table td:last-child {
+    text-align: right;
+    font-weight: bold;
+}
+
+.result-table .total {
+    background: #0077ff;
+    color: white;
+    font-size: 18px;
+}
+
+/* ===========================
+   Action Buttons
+=========================== */
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.action-buttons a {
+    text-decoration: none;
+}
+
+.action-buttons button {
+    min-width: 140px;
+}
+
+/* ===========================
+   Footer
+=========================== */
+
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width:768px) {
+
+    header h1 {
+        font-size: 28px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .tools {
+        width: 95%;
+    }
+
+    .card {
+        padding: 15px;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    textarea {
+        width: 100%;
+        padding: 12px;
+        margin-top: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        resize: vertical;
+        font-size: 16px;
+    }
+
+    /* ===========================
+   Hero Section
+=========================== */
+
+    .hero {
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .hero h2 {
+        color: #0077ff;
+        font-size: 36px;
+        margin-bottom: 15px;
+    }
+
+    .hero p {
+        color: #555;
+        margin-bottom: 25px;
+        font-size: 18px;
+    }
+
+    #searchBox {
+        width: 50%;
+        max-width: 500px;
+    }
+
+    @media(max-width:768px) {
+
+        #searchBox {
+
+            width: 90%;
+
+        }
+
+    }
+
+}
+
+/* ===========================
+   Hero Section
+=========================== */
+
+.hero {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero h2 {
+    color: #0077ff;
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: #555;
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+#searchBox {
+    width: 50%;
+    max-width: 500px;
+}
+
+@media(max-width:768px) {
+
+    #searchBox {
+
+        width: 90%;
+
+    }
+
+}
+
+.logo {
+
+    font-size: 42px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+}
+
+/* ===========================
+   Stats Section
+=========================== */
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 40px auto;
+    flex-wrap: wrap;
+    width: 90%;
+}
+
+.stat {
+    background: #fff;
+    padding: 25px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.stat:hover {
+    transform: translateY(-5px);
+}
+
+.stat h2 {
+    color: #0077ff;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.stat p {
+    color: #555;
+}
+
+/* ===========================
+   Why Choose WorkMate
+=========================== */
+
+.features {
+    width: 90%;
+    margin: 60px auto;
+    text-align: center;
+}
+
+.features h2 {
+    color: #0077ff;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+}
+
+.feature-card {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+    transition: 0.3s;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-card h3 {
+    color: #0077ff;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    color: #555;
+    line-height: 1.6;
+}
+
+.hero-btn {
+    margin-top: 20px;
+    padding: 15px 35px;
+    font-size: 18px;
+}
+
+.footer-links {
+
+    margin: 15px 0;
+
+}
+
+.footer-links a {
+
+    color: white;
+
+    text-decoration: none;
+
+    margin: 0 15px;
+
+}
+
+.footer-links a:hover {
+
+    text-decoration: underline;
+
+}
+
+.logo img {
+    height: 70px;
+}
+
+.hero {
+
+    background: #f5f5f5;
+
+    padding: 80px 20px;
+
+    text-align: center;
+
+    color: #222;
+    padding-bottom: 30px;
+
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo img {
+    width: 120px;
+    height: auto;
+}
+
+.logo h1 {
+    color: #fff;
+    font-size: 48px;
+    margin: 0;
+}
+
+.logo p {
+    color: #fff;
+    margin-top: 5px;
+    font-size: 20px;
+}
+
+.hero-banner {
+    width: 100%;
+    margin: 30px 0;
+    margin-top: 0;
+}
+
+.hero-banner img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.card {
+
+    transition: .3s;
+
+}
+
+.card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+
+}

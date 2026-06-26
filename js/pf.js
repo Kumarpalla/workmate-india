@@ -70,5 +70,6 @@ function calculatePF() {
 </table>
 
 `;
+    showToast("PF Calculated Successfully");
 
 }

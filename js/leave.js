@@ -73,5 +73,5 @@ function calculateLeave() {
 </table>
 
 `;
-
+    showToast("Leave Calculated Successfully");
 }

@@ -2,75 +2,321 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gratuity Calculator | WorkMate India</title>
+    <title>
 
-    <meta name="description"
-        content="Free Gratuity Calculator for Indian employees. Calculate gratuity amount instantly.">
+        Gratuity Calculator | WorkMate India
+
+    </title>
+
+    <meta name="description" content="Free Gratuity Calculator for Indian Employees">
+
+    <link rel="icon" href="../assets/favicon.png">
+
+    <!-- Bootstrap -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
     <link rel="stylesheet" href="../style.css">
-    <link rel="icon" type="image/png" href="../assets/favicon.png">
+
+    <!-- Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-10MCYLHTVH"></script>
+
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-10MCYLHTVH');
+
+    </script>
+
 </head>
 
 <body>
 
-    <header>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow sticky-top">
 
-        <div class="logo">
-            <img src="../assets/logo.png" alt="WorkMate India">
-        </div>
+        <div class="container">
 
-        <p>Smart Tools for Every Indian Employee</p>
+            <a class="navbar-brand fw-bold" href="../index.html">
 
-    </header>
+                <img src="../assets/logo.png" width="45" class="me-2">
 
-    <section class="tools">
+                WorkMate India
 
-        <div class="card">
+            </a>
 
-            <h2>Gratuity Calculator</h2>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar">
 
-            <input type="number" id="basicSalary" placeholder="Last Drawn Basic Salary">
+                <span class="navbar-toggler-icon"></span>
 
-            <input type="number" id="years" placeholder="Years of Service">
-
-            <button id="calculateGratuity">
-                Calculate Gratuity
             </button>
 
+            <div class="collapse navbar-collapse" id="navbar">
+
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="../index.html">
+
+                            Home
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="../faq.html">
+
+                            FAQ
+
+                        </a>
+
+                    </li>
+
+                    <li class="nav-item">
+
+                        <a class="nav-link" href="../contact.html">
+
+                            Contact
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
         </div>
 
-        <div class="card">
+    </nav>
 
-            <h2>Result</h2>
+    <section class="hero py-5">
 
-            <div id="gratuityResult">
+        <div class="container text-center">
 
-                No calculation yet.
+            <h1 class="fw-bold">
 
-            </div>
+                🎁 Gratuity Calculator
 
-            <div class="action-buttons">
+            </h1>
 
-                <a href="../index.html">
-                    <button>← Back to Home</button>
-                </a>
+            <p class="lead text-muted">
 
-            </div>
+                Calculate your gratuity amount instantly.
+
+            </p>
 
         </div>
 
     </section>
 
-    <footer>
+    <div class="container py-5">
 
-        <p>© 2026 WorkMate India</p>
+        <div class="row g-4">
+
+            <div class="col-lg-6">
+
+                <div class="card shadow border-0 rounded-4">
+
+                    <div class="card-body p-4">
+
+                        <h3 class="mb-4">
+
+                            Enter Gratuity Details
+
+                        </h3>
+                        <!-- Last Drawn Salary -->
+
+                        <div class="mb-3">
+
+                            <label class="form-label fw-semibold">
+
+                                Last Drawn Basic Salary (₹)
+
+                            </label>
+
+                            <input type="number" id="lastSalary" class="form-control form-control-lg"
+                                placeholder="Enter Last Drawn Basic Salary">
+
+                        </div>
+
+                        <!-- Years of Service -->
+
+                        <div class="mb-4">
+
+                            <label class="form-label fw-semibold">
+
+                                Years of Service
+
+                            </label>
+
+                            <input type="number" id="years" class="form-control form-control-lg"
+                                placeholder="Enter Years of Service">
+
+                        </div>
+
+                        <div class="d-grid">
+
+                            <button id="calculateGratuity" class="btn btn-primary btn-lg">
+
+                                <i class="fa-solid fa-calculator"></i>
+
+                                Calculate Gratuity
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Result Card -->
+
+            <div class="col-lg-6">
+
+                <div class="card shadow border-0 rounded-4">
+
+                    <div class="card-body p-4">
+
+                        <h3 class="mb-4">
+
+                            Gratuity Summary
+
+                        </h3>
+
+                        <div id="gratuityResult">
+
+                            <div class="alert alert-info">
+
+                                No calculation yet.
+
+                            </div>
+
+                        </div>
+
+                        <div class="d-grid gap-3 mt-4">
+
+                            <button class="btn btn-success btn-lg" onclick="window.print()">
+
+                                <i class="fa-solid fa-print"></i>
+
+                                Print Result
+
+                            </button>
+
+                            <a href="../index.html" class="btn btn-outline-primary btn-lg">
+
+                                <i class="fa-solid fa-arrow-left"></i>
+
+                                Back to Home
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- Footer -->
+
+    <footer class="bg-dark text-white py-4 mt-5">
+
+        <div class="container text-center">
+
+            <p class="mb-2">
+
+                © 2026 WorkMate India
+
+            </p>
+
+            <div>
+
+                <a href="../about.html" class="text-white text-decoration-none me-3">
+
+                    About
+
+                </a>
+
+                <a href="../contact.html" class="text-white text-decoration-none me-3">
+
+                    Contact
+
+                </a>
+
+                <a href="../privacy.html" class="text-white text-decoration-none me-3">
+
+                    Privacy
+
+                </a>
+
+                <a href="../terms.html" class="text-white text-decoration-none me-3">
+
+                    Terms
+
+                </a>
+
+                <a href="../faq.html" class="text-white text-decoration-none me-3">
+
+                    FAQ
+
+                </a>
+
+                <a href="../disclaimer.html" class="text-white text-decoration-none">
+
+                    Disclaimer
+
+                </a>
+
+            </div>
+
+            <p class="mt-3 text-secondary">
+
+                Made with ❤️ in India
+
+            </p>
+
+        </div>
 
     </footer>
 
+    <!-- Bootstrap JS -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Utils (Required if using formatCurrency()) -->
+
     <script src="../js/utils.js"></script>
+
+    <!-- Gratuity Calculator JS -->
+
     <script src="../js/gratuity.js"></script>
 
 </body>

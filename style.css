@@ -1,193 +1,408 @@
 /* ===========================
-   Global Styles
+   Google Font
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
+   Global
 =========================== */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-    background: #f5f5f5;
-    color: #333;
+
+    font-family: 'Poppins', sans-serif;
+
+    background: #f8fafc;
+
+    color: #1e293b;
+
+    overflow-x: hidden;
+
 }
 
 /* ===========================
-   Header
+   Smooth Scroll
 =========================== */
 
-header {
-    background: #0077ff;
-    color: white;
-    padding: 30px;
-    text-align: center;
+html {
+
+    scroll-behavior: smooth;
+
 }
 
 /* ===========================
-   Navigation
+   Navbar
 =========================== */
 
-nav {
-    margin-top: 20px;
+.navbar {
+
+    background: linear-gradient(90deg, #2563eb, #1d4ed8) !important;
+
+    padding: 16px 0;
+
+    transition: .3s;
+
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-    font-weight: bold;
-    transition: 0.3s;
+.navbar-brand {
+
+    font-size: 28px;
+
+    font-weight: 700;
+
 }
 
-nav a:hover {
-    color: #ffd700;
-}
+.navbar-brand img {
 
-/* ===========================
-   Cards Layout
-=========================== */
-
-.tools {
-    width: 90%;
-    margin: 30px auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: white;
-    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+
 }
 
-.card h2 {
-    margin-bottom: 15px;
-    color: #0077ff;
+.nav-link {
+
+    color: white !important;
+
+    font-weight: 500;
+
+    margin-left: 15px;
+
+    transition: .3s;
+
 }
 
-.card p {
+.nav-link:hover {
+
+    color: #ffd43b !important;
+
+}
+
+/* ===========================
+   Hero
+=========================== */
+
+.hero {
+
+    background: linear-gradient(135deg, #eff6ff, #ffffff);
+
+    padding: 90px 0;
+
+}
+
+.hero img {
+
+    width: 120px;
+
     margin-bottom: 20px;
+
+}
+
+.hero h1 {
+
+    font-size: 3.3rem;
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+}
+
+.hero p {
+
+    font-size: 1.2rem;
+
+    color: #64748b;
+
+    margin-top: 20px;
+
+    margin-bottom: 35px;
+
 }
 
 /* ===========================
-   Inputs
+   Search
 =========================== */
 
-input,
-select {
-    width: 100%;
-    padding: 12px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 16px;
+#searchBox {
+
+    border-radius: 50px;
+
+    border: none;
+
+    padding: 18px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .08);
+
 }
 
-/* ===========================
-   Checkboxes
-=========================== */
+#searchBox:focus {
 
-.checkbox {
-    text-align: left;
-    margin-bottom: 15px;
-}
+    box-shadow: 0 0 0 5px rgba(37, 99, 235, .2);
 
-.checkbox label {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.checkbox input {
-    width: 18px;
-    height: 18px;
-    margin: 0;
 }
 
 /* ===========================
    Buttons
 =========================== */
 
-button {
-    background: #0077ff;
-    color: white;
+.btn {
+
+    border-radius: 50px;
+
+    padding: 12px 30px;
+
+    font-weight: 600;
+
+}
+
+.btn-primary {
+
+    background: #2563eb;
+
     border: none;
-    padding: 12px 25px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: 0.3s;
-    font-size: 16px;
+
 }
 
-button:hover {
-    background: #005fd1;
+.btn-primary:hover {
+
+    background: #1d4ed8;
+
 }
 
-/* ===========================
-   Result
-=========================== */
+.btn-outline-primary {
 
-#result {
-    margin-top: 15px;
+    border-radius: 50px;
+
 }
 
 /* ===========================
-   Result Table
+   Stats Cards
 =========================== */
 
-.result-table {
+.stat-card,
+.stats .card {
+
+    border: none;
+
+    border-radius: 20px;
+
+    background: #fff;
+
+    transition: .35s ease;
+
+    box-shadow: 0 10px 25px rgba(15, 23, 42, .08);
+
+}
+
+.stats .card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 40px rgba(37, 99, 235, .15);
+
+}
+
+.stats h2 {
+
+    font-size: 42px;
+
+    font-weight: 700;
+
+}
+
+.stats p {
+
+    color: #64748b;
+
+    margin-bottom: 0;
+
+}
+
+/* ===========================
+   Tool Cards
+=========================== */
+
+#tools {
+
+    background: #f8fafc;
+
+}
+
+#tools .card {
+
+    border: none;
+
+    border-radius: 24px;
+
+    overflow: hidden;
+
+    transition: .35s;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .08);
+
+}
+
+#tools .card:hover {
+
+    transform: translateY(-10px);
+
+    box-shadow: 0 25px 50px rgba(37, 99, 235, .18);
+
+}
+
+#tools .card-body {
+
+    padding: 35px 25px;
+
+}
+
+#tools i {
+
+    margin-bottom: 20px;
+
+    transition: .35s;
+
+}
+
+#tools .card:hover i {
+
+    transform: scale(1.15) rotate(5deg);
+
+}
+
+#tools h4 {
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+    color: #0f172a;
+
+}
+
+#tools p {
+
+    color: #64748b;
+
+    min-height: 55px;
+
+}
+
+#tools .btn {
+
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
 
-.result-table td {
-    padding: 12px;
-    border-bottom: 1px solid #ddd;
-}
+    margin-top: 15px;
 
-.result-table td:first-child {
-    text-align: left;
-}
-
-.result-table td:last-child {
-    text-align: right;
-    font-weight: bold;
-}
-
-.result-table .total {
-    background: #0077ff;
-    color: white;
-    font-size: 18px;
 }
 
 /* ===========================
-   Action Buttons
+   Why Choose Us
 =========================== */
 
-.action-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-    flex-wrap: wrap;
+.features {
+
+    padding: 90px 0;
+
 }
 
-.action-buttons a {
-    text-decoration: none;
+.features .card {
+
+    border: none;
+
+    border-radius: 22px;
+
+    transition: .35s;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
 }
 
-.action-buttons button {
-    min-width: 140px;
+.features .card:hover {
+
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 45px rgba(37, 99, 235, .15);
+
+}
+
+.features i {
+
+    font-size: 52px;
+
+    margin-bottom: 20px;
+
+}
+
+.features h5 {
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
+}
+
+.features p {
+
+    color: #64748b;
+
+}
+
+/* ===========================
+   Accordion
+=========================== */
+
+.accordion-item {
+
+    border: none;
+
+    border-radius: 15px;
+
+    margin-bottom: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .06);
+
+}
+
+.accordion-button {
+
+    font-weight: 600;
+
+    padding: 20px;
+
+}
+
+.accordion-button:not(.collapsed) {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+/* ===========================
+   Section Titles
+=========================== */
+
+section h2 {
+
+    font-weight: 700;
+
+    color: #0f172a;
+
+}
+
+.text-muted {
+
+    color: #64748b !important;
+
 }
 
 /* ===========================
@@ -195,312 +410,645 @@ button:hover {
 =========================== */
 
 footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 50px;
+
+    background: #0f172a;
+
+    color: #fff;
+
+    padding: 60px 0 30px;
+
+}
+
+footer h3 {
+
+    font-weight: 700;
+
+    margin-bottom: 15px;
+
 }
 
 footer p {
-    margin: 5px 0;
+
+    color: #cbd5e1;
+
+}
+
+footer a {
+
+    color: #e2e8f0;
+
+    text-decoration: none;
+
+    transition: .3s;
+
+}
+
+footer a:hover {
+
+    color: #60a5fa;
+
+}
+
+footer hr {
+
+    border-color: rgba(255, 255, 255, .1);
+
+    margin: 30px 0;
+
+}
+
+/* ===========================
+   Card Hover Animation
+=========================== */
+
+.card {
+
+    transition: all .35s ease;
+
+}
+
+.card:hover {
+
+    transform: translateY(-10px);
+
+}
+
+/* ===========================
+   Button Animation
+=========================== */
+
+.btn {
+
+    transition: all .3s ease;
+
+}
+
+.btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 10px 20px rgba(37, 99, 235, .25);
+
+}
+
+/* ===========================
+   Navbar Shadow
+=========================== */
+
+.navbar {
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, .08);
+
+}
+
+/* ===========================
+   Hero Animation
+=========================== */
+
+.hero h1 {
+
+    animation: fadeDown 1s ease;
+
+}
+
+.hero p {
+
+    animation: fadeUp 1.2s ease;
+
+}
+
+.hero .btn {
+
+    animation: fadeUp 1.4s ease;
+
+}
+
+/* ===========================
+   Keyframes
+=========================== */
+
+@keyframes fadeDown {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(-40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* ===========================
+   Scrollbar
+=========================== */
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: #f1f5f9;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #2563eb;
+
+    border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #1d4ed8;
+
 }
 
 /* ===========================
    Responsive
 =========================== */
 
-@media (max-width:768px) {
+@media(max-width:992px) {
 
-    header h1 {
-        font-size: 28px;
-    }
+    .hero h1 {
 
-    nav a {
-        display: block;
-        margin: 10px 0;
-    }
-
-    .tools {
-        width: 95%;
-    }
-
-    .card {
-        padding: 15px;
-    }
-
-    button {
-        width: 100%;
-    }
-
-    textarea {
-        width: 100%;
-        padding: 12px;
-        margin-top: 10px;
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        resize: vertical;
-        font-size: 16px;
-    }
-
-    /* ===========================
-   Hero Section
-=========================== */
-
-    .hero {
-        text-align: center;
-        padding: 40px 20px;
-    }
-
-    .hero h2 {
-        color: #0077ff;
-        font-size: 36px;
-        margin-bottom: 15px;
-    }
-
-    .hero p {
-        color: #555;
-        margin-bottom: 25px;
-        font-size: 18px;
-    }
-
-    #searchBox {
-        width: 50%;
-        max-width: 500px;
-    }
-
-    @media(max-width:768px) {
-
-        #searchBox {
-
-            width: 90%;
-
-        }
+        font-size: 2.5rem;
 
     }
 
-}
+    .navbar-brand {
 
-/* ===========================
-   Hero Section
-=========================== */
+        font-size: 24px;
 
-.hero {
-    text-align: center;
-    padding: 40px 20px;
-}
+    }
 
-.hero h2 {
-    color: #0077ff;
-    font-size: 36px;
-    margin-bottom: 15px;
-}
-
-.hero p {
-    color: #555;
-    margin-bottom: 25px;
-    font-size: 18px;
-}
-
-#searchBox {
-    width: 50%;
-    max-width: 500px;
 }
 
 @media(max-width:768px) {
 
+    .hero {
+
+        padding: 70px 20px;
+
+    }
+
+    .hero h1 {
+
+        font-size: 2rem;
+
+    }
+
+    .hero p {
+
+        font-size: 1rem;
+
+    }
+
+    .btn {
+
+        width: 100%;
+
+        margin-bottom: 10px;
+
+    }
+
     #searchBox {
 
-        width: 90%;
+        font-size: 16px;
 
     }
 
 }
 
-.logo {
+@media(max-width:576px) {
 
-    font-size: 42px;
+    .stats h2 {
 
-    font-weight: bold;
+        font-size: 32px;
 
-    letter-spacing: 1px;
+    }
+
+    .card-body {
+
+        padding: 25px 20px;
+
+    }
+
+    footer {
+
+        text-align: center;
+
+    }
 
 }
 
 /* ===========================
-   Stats Section
+   Dark Theme
 =========================== */
 
-.stats {
-    display: flex;
-    justify-content: center;
-    gap: 30px;
-    margin: 40px auto;
-    flex-wrap: wrap;
-    width: 90%;
-}
+.dark-mode {
 
-.stat {
-    background: #fff;
-    padding: 25px;
-    width: 250px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    text-align: center;
-    transition: 0.3s;
-}
-
-.stat:hover {
-    transform: translateY(-5px);
-}
-
-.stat h2 {
-    color: #0077ff;
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-
-.stat p {
-    color: #555;
-}
-
-/* ===========================
-   Why Choose WorkMate
-=========================== */
-
-.features {
-    width: 90%;
-    margin: 60px auto;
-    text-align: center;
-}
-
-.features h2 {
-    color: #0077ff;
-    margin-bottom: 30px;
-    font-size: 32px;
-}
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-    gap: 20px;
-}
-
-.feature-card {
-    background: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .1);
-    transition: 0.3s;
-}
-
-.feature-card:hover {
-    transform: translateY(-5px);
-}
-
-.feature-card h3 {
-    color: #0077ff;
-    margin-bottom: 15px;
-}
-
-.feature-card p {
-    color: #555;
-    line-height: 1.6;
-}
-
-.hero-btn {
-    margin-top: 20px;
-    padding: 15px 35px;
-    font-size: 18px;
-}
-
-.footer-links {
-
-    margin: 15px 0;
-
-}
-
-.footer-links a {
+    background: #0f172a;
 
     color: white;
 
-    text-decoration: none;
+}
 
-    margin: 0 15px;
+.dark-mode .card {
+
+    background: #1e293b;
+
+    color: white;
+
+    border: none;
 
 }
 
-.footer-links a:hover {
+.dark-mode .hero {
 
-    text-decoration: underline;
-
-}
-
-.logo img {
-    height: 70px;
-}
-
-.hero {
-
-    background: #f5f5f5;
-
-    padding: 80px 20px;
-
-    text-align: center;
-
-    color: #222;
-    padding-bottom: 30px;
+    background: #111827;
 
 }
 
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
+.dark-mode .navbar {
+
+    background: #020617 !important;
+
 }
 
-.logo img {
-    width: 120px;
-    height: auto;
+.dark-mode footer {
+
+    background: #020617;
+
 }
 
-.logo h1 {
-    color: #fff;
-    font-size: 48px;
-    margin: 0;
+.dark-mode input {
+
+    background: #1e293b;
+
+    color: white;
+
+    border: 1px solid #334155;
+
 }
 
-.logo p {
-    color: #fff;
-    margin-top: 5px;
-    font-size: 20px;
+.dark-mode input::placeholder {
+
+    color: #cbd5e1;
+
 }
 
-.hero-banner {
-    width: 100%;
-    margin: 30px 0;
-    margin-top: 0;
+.dark-mode .form-control {
+
+    background: #1e293b;
+
+    color: white;
+
 }
 
-.hero-banner img {
-    width: 100%;
-    max-height: 500px;
-    object-fit: cover;
-    border-radius: 15px;
+.dark-mode .form-control:focus {
+
+    background: #1e293b;
+
+    color: white;
+
 }
 
-.card {
+.dark-mode .text-muted {
+
+    color: #cbd5e1 !important;
+
+}
+
+.dark-mode .accordion-button {
+
+    background: #1e293b;
+
+    color: white;
+
+}
+
+.dark-mode .accordion-body {
+
+    background: #334155;
+
+    color: white;
+
+}
+
+/* ===========================
+   Scroll To Top Button
+=========================== */
+
+#topBtn {
+
+    position: fixed;
+
+    bottom: 30px;
+
+    right: 30px;
+
+    width: 55px;
+
+    height: 55px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 999;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
 
     transition: .3s;
 
 }
 
-.card:hover {
+#topBtn:hover {
 
-    transform: translateY(-8px);
+    background: #1d4ed8;
 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, .15);
+    transform: translateY(-5px);
+
+}
+
+/* ===========================
+   Loading Screen
+=========================== */
+
+#loader {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100vh;
+
+    background: white;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 99999;
+
+    transition: .5s;
+
+}
+
+.loader-content {
+
+    text-align: center;
+
+}
+
+.loader-content img {
+
+    width: 120px;
+
+    margin-bottom: 20px;
+
+    animation: logoPulse 1.5s infinite;
+
+}
+
+.loader-content h2 {
+
+    font-weight: 700;
+
+    color: #2563eb;
+
+}
+
+@keyframes logoPulse {
+
+    0% {
+
+        transform: scale(1);
+
+    }
+
+    50% {
+
+        transform: scale(1.08);
+
+    }
+
+    100% {
+
+        transform: scale(1);
+
+    }
+
+}
+
+/* ===========================
+   Toast Notification
+=========================== */
+
+#toast {
+
+    position: fixed;
+
+    bottom: 30px;
+
+    right: 30px;
+
+    background: #16a34a;
+
+    color: white;
+
+    padding: 15px 22px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .2);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .35s;
+
+    z-index: 9999;
+
+    font-weight: 600;
+
+}
+
+#toast.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+#toast i {
+
+    font-size: 22px;
+
+}
+
+/* ===========================
+   Search Suggestions
+=========================== */
+
+#searchSuggestions {
+
+    max-width: 600px;
+
+    margin: auto;
+
+    text-align: left;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .08);
+
+}
+
+#searchSuggestions a {
+
+    padding: 14px 18px;
+
+    text-decoration: none;
+
+    color: #333;
+
+    transition: .3s;
+
+}
+
+#searchSuggestions a:hover {
+
+    background: #2563eb;
+
+    color: white;
+
+}
+
+/* ===========================
+   Floating Action Buttons
+=========================== */
+
+.floating-buttons {
+
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 100px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+    z-index: 999;
+
+}
+
+.fab {
+
+    width: 60px;
+
+    height: 60px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-decoration: none;
+
+    color: white;
+
+    font-size: 26px;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, .25);
+
+    transition: .3s;
+
+}
+
+.fab:hover {
+
+    transform: scale(1.1);
+
+    color: white;
+
+}
+
+.fab-whatsapp {
+
+    background: #25D366;
+
+}
+
+.fab-email {
+
+    background: #2563eb;
 
 }

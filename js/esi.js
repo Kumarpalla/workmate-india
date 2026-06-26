@@ -66,5 +66,6 @@ function calculateESI() {
 </table>
 
 `;
+    showToast("ESI Calculated Successfully");
 
 }

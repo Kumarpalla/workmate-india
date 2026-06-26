@@ -14,16 +14,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const esiBtn = document.getElementById("calculateESI");
     if (esiBtn) esiBtn.addEventListener("click", calculateESI);
 
-    const searchBox = document.getElementById("searchBox");
-    if (searchBox) {
-        searchBox.addEventListener("keyup", function () {
-            let value = this.value.toLowerCase();
-            document.querySelectorAll(".card").forEach(card => {
-                card.style.display = card.innerText.toLowerCase().includes(value) ? "block" : "none";
-            });
-        });
-    }
-
 });
 
 
@@ -53,87 +43,268 @@ if (searchBox) {
 
 }
 
+/* ===========================
+   Loader
+=========================== */
 
+window.addEventListener("load", () => {
 
-const leaveBtn = document.getElementById("calculateLeave");
+    const loader = document.getElementById("loader");
 
-if (leaveBtn) {
+    if (loader) {
 
-    leaveBtn.addEventListener("click", calculateLeave);
+        setTimeout(() => {
 
-}
+            loader.style.opacity = "0";
 
-function calculateLeave() {
+            loader.style.visibility = "hidden";
 
-    let cl = Number(document.getElementById("casualLeave").value);
-
-    let sl = Number(document.getElementById("sickLeave").value);
-
-    let el = Number(document.getElementById("earnedLeave").value);
-
-    let used = Number(document.getElementById("usedLeave").value);
-
-    let total = cl + sl + el;
-
-    if (used > total) {
-
-        alert("Used Leave cannot be greater than Total Leave.");
-
-        return;
+        }, 800);
 
     }
 
-    let remaining = total - used;
+});
 
-    let usage = (used / total) * 100;
 
-    let remainingPercent = 100 - usage;
 
-    document.getElementById("leaveResult").innerHTML = `
+/* ===========================
+   Dark Mode
+=========================== */
 
-<table class="result-table">
+const themeToggle = document.getElementById("themeToggle");
 
-<tr>
-<td>Casual Leave</td>
-<td>${cl}</td>
-</tr>
+if (themeToggle) {
 
-<tr>
-<td>Sick Leave</td>
-<td>${sl}</td>
-</tr>
+    themeToggle.addEventListener("click", () => {
 
-<tr>
-<td>Earned Leave</td>
-<td>${el}</td>
-</tr>
+        document.body.classList.toggle("dark-mode");
 
-<tr>
-<td>Total Leave</td>
-<td>${total}</td>
-</tr>
+        if (document.body.classList.contains("dark-mode")) {
 
-<tr>
-<td>Used Leave</td>
-<td>${used}</td>
-</tr>
+            themeToggle.innerHTML = "☀️";
 
-<tr class="total">
-<td>Remaining Leave</td>
-<td>${remaining}</td>
-</tr>
+            localStorage.setItem("theme", "dark");
 
-<tr>
-<td>Leave Usage</td>
-<td>${usage.toFixed(2)}%</td>
-</tr>
+        }
 
-<tr>
-<td>Remaining</td>
-<td>${remainingPercent.toFixed(2)}%</td>
-</tr>
+        else {
 
-</table>
+            themeToggle.innerHTML = "🌙";
+
+            localStorage.setItem("theme", "light");
+
+        }
+
+    });
+
+    if (localStorage.getItem("theme") === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+        themeToggle.innerHTML = "☀️";
+
+    }
+
+}
+
+/* ===========================
+   Scroll To Top
+=========================== */
+
+const topBtn = document.getElementById("topBtn");
+
+if (topBtn) {
+
+    window.addEventListener("scroll", () => {
+
+        if (window.scrollY > 300) {
+
+            topBtn.style.opacity = "1";
+            topBtn.style.visibility = "visible";
+
+        }
+
+        else {
+
+            topBtn.style.opacity = "0";
+            topBtn.style.visibility = "hidden";
+
+        }
+
+    });
+
+    topBtn.addEventListener("click", () => {
+
+        window.scrollTo({
+
+            top: 0,
+            behavior: "smooth"
+
+        });
+
+    });
+
+}
+
+
+
+
+/* ===========================
+   Toast
+=========================== */
+
+function showToast(message) {
+
+    const toast = document.getElementById("toast");
+
+    const text = document.getElementById("toastMessage");
+
+    if (!toast || !text) return;
+
+    text.innerHTML = message;
+
+    toast.classList.add("show");
+
+    setTimeout(() => {
+
+        toast.classList.remove("show");
+
+    }, 3000);
+
+}
+/* ===========================
+   Counter Animation
+=========================== */
+
+const counters = document.querySelectorAll(".counter");
+
+counters.forEach(counter => {
+
+    const target = +counter.dataset.target;
+
+    let count = 0;
+
+    const updateCounter = () => {
+
+        const increment = target / 80;
+
+        if (count < target) {
+
+            count += increment;
+
+            counter.innerText = Math.ceil(count);
+
+            requestAnimationFrame(updateCounter);
+
+        } else {
+
+            if (target === 100)
+
+                counter.innerText = target + "%";
+
+            else if (target === 6)
+
+                counter.innerText = target + "+";
+
+            else
+
+                counter.innerText = target;
+
+        }
+
+    };
+
+    updateCounter();
+
+});
+/* ===========================
+   Search Suggestions
+=========================== */
+
+const suggestionBox = document.getElementById("searchSuggestions");
+
+if (searchBox && suggestionBox) {
+
+    const tools = [
+
+        {
+
+            name: "Salary Calculator",
+
+            url: "tools/salary.html"
+
+        },
+
+        {
+
+            name: "PF Calculator",
+
+            url: "tools/pf.html"
+
+        },
+
+        {
+
+            name: "ESI Calculator",
+
+            url: "tools/esi.html"
+
+        },
+
+        {
+
+            name: "Leave Planner",
+
+            url: "tools/leave.html"
+
+        },
+
+        {
+
+            name: "Income Tax Calculator",
+
+            url: "tools/income-tax.html"
+
+        },
+
+        {
+
+            name: "Gratuity Calculator",
+
+            url: "tools/gratuity.html"
+
+        }
+
+    ];
+
+    searchBox.addEventListener("keyup", () => {
+
+        const value = searchBox.value.toLowerCase();
+
+        suggestionBox.innerHTML = "";
+
+        if (value === "") return;
+
+        tools.forEach(tool => {
+
+            if (tool.name.toLowerCase().includes(value)) {
+
+                suggestionBox.innerHTML += `
+
+<a href="${tool.url}"
+
+class="list-group-item list-group-item-action">
+
+${tool.name}
+
+</a>
 
 `;
+
+            }
+
+        });
+
+    });
+
 }
