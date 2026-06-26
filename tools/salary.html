@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Salary Calculator</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+
+    <header>
+
+        <h1>Salary Calculator</h1>
+
+        <p>Calculate Your In-Hand Salary</p>
+
+    </header>
+
+    <section class="tools">
+
+        <div class="card">
+
+            <h2>Salary Details</h2>
+
+            <input type="number" id="grossSalary" placeholder="Monthly Gross Salary">
+
+            <input type="number" id="basicSalary" placeholder="Basic Salary (Optional)">
+
+            <div class="checkbox">
+
+                <label>
+
+                    <input type="checkbox" id="pf">
+
+                    PF Applicable
+
+                </label>
+
+            </div>
+
+            <div class="checkbox">
+
+                <label>
+
+                    <input type="checkbox" id="esi">
+
+                    ESI Applicable
+
+                </label>
+
+            </div>
+
+            <select id="state">
+
+                <option>Telangana</option>
+
+                <option>Andhra Pradesh</option>
+
+                <option>Karnataka</option>
+
+                <option>Tamil Nadu</option>
+
+            </select>
+
+            <input type="number" id="bonus" placeholder="Bonus (Optional)">
+
+            <button id="calculateBtn">
+
+                Calculate Salary
+
+            </button>
+
+        </div>
+
+        <div class="card">
+
+            <h2>Result</h2>
+
+            <div id="result">
+                No calculation yet.
+            </div>
+
+            <div class="action-buttons">
+
+                <a href="../index.html">
+                    <button type="button">← Back to Home</button>
+                </a>
+
+                <button type="button" id="downloadPdf">
+                    Download PDF
+                </button>
+
+                <button type="button" onclick="window.print()">
+                    Print
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+    <footer>
+
+        <p>© 2026 WorkMate India</p>
+
+        <div class="footer-links">
+            <a href="terms.html">Terms</a>
+            <a href="disclaimer.html">Disclaimer</a>
+        </div>
+
+        <p>Made with ❤️ in India</p>
+
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <script src="../script.js"></script>
+
+</body>
+
+</html>
