@@ -1,0 +1,112 @@
+/* WorkMate India - style.css v2 Starter Replace your header,
+hero,
+card,
+button and footer styles with these improved styles. */
+
+/* HEADER */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: linear-gradient(135deg, #0f172a, #2563eb);
+    color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, .15);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.logo img {
+    width: 60px;
+    border-radius: 12px;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: #FFD700;
+}
+
+/* HERO */
+.hero {
+    background: linear-gradient(135deg, #eff6ff, #ffffff);
+    text-align: center;
+    padding: 80px 20px;
+}
+
+.hero h2 {
+    font-size: 48px;
+    color: #1e3a8a;
+}
+
+.hero p {
+    font-size: 20px;
+    color: #475569;
+}
+
+/* CARDS */
+.card {
+    background: #fff;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, .08);
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+}
+
+/* BUTTON */
+button {
+    border: none;
+    border-radius: 50px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: #fff;
+    cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+    background: #0f172a;
+    color: #fff;
+    text-align: center;
+    padding: 30px;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero h2 {
+        font-size: 34px;
+    }
+}
